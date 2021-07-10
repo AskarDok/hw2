@@ -9,5 +9,7 @@
 <span>id: {{ product.id }}</span><hr>
 <a href="/products/{{ product.id }}">title: {{ product.title }}</a><hr>
 <span>price: {{ product.price }}</span><hr>
-</body>
+<span>Tags:
+    {% for tag in product.tags.all %} {{ tag.name }}  {% endfor %}
+</span></body>
 </html>

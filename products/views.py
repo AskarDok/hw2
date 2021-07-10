@@ -22,6 +22,7 @@ def product_item_view(request, product_id):
     product = Product.objects.get(id=product_id)
     data = {
         'product': product,
-        'title': product.title
+        'title': product.title,
+        'tags': product.tags
     }
     return render(request, 'prod.html', context=data)
