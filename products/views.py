@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-from .models import Product
+from .models import *
 # Create your views here.
 
+def greeting_page(request):
+    products = Product.objects.all()
+    data = {
+        'title': 'Home page'
+    }
+    return render(request, 'gret_page.html', context=data)
 
 def main_page_view(request):
     products = Product.objects.all()
@@ -26,3 +32,11 @@ def product_item_view(request, product_id):
         'tags': product.tags
     }
     return render(request, 'prod.html', context=data)
+
+def computer_cat(request):
+    prod_in_category = Product.objects.all()
+    data = {
+        'title': 'Computer',
+        'category': prod_in_category
+    }
+    return render(request, 'computer_cat.html', context=data)

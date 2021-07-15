@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for product in product_list %}
-
-    <span>id: {{ product.id }}</span><hr>
-    <a href="/products/{{ product.id }}/">title: {{ product.title }}</a><hr>
-    <span>price: {{ product.price }}</span><hr>
-{% endfor %}
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    {% for product in product_list %}
+        <span>id: {{ product.id }}</span><hr>
+        <a href="/products/{{ product.id }}/">title: {{ product.title }}</a><hr>
+        <span>price: {{ product.price }}</span><hr>
+        <br>
+    {% endfor %}
+{% endblock %}

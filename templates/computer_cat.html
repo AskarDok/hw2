@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% for produc in category %}
+        {% if produc.category.name == 'Computer' %}
+            <a href="/products/{{ produc.id }}/">prod: {{ produc.title }}</a>
+            <hr>
+            <span></span>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
